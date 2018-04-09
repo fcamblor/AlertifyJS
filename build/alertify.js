@@ -1422,6 +1422,7 @@
          * @return {undefined}
          */
         function handleTransitionOutEvent(event, instance) {
+            if(!instance || !instance.__internal) { return; }
             // clear the timer
             clearTimeout(instance.__internal.timerOut);
             // unbind the event
